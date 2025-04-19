@@ -1,0 +1,15 @@
+FastAPI
+uvicorn
+pydantic
+motor
+python-dotenv
+requests
+beautifulsoup4
+nltk
+tensorflow
+torch
+transformers
+scikit-learn
+googlemaps
+pytest
+httpx

@@ -1,9 +1,37 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React , {useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Building, Users, MapPin, Search } from 'lucide-react';
 import InteractiveMap from '../components/home/InteractiveMap';
 
 const Home: React.FC = () => {
+  // Initialize navigate function from react-router-dom
+  const navigate = useNavigate();
+    // Add state for form fields
+    const [university, setUniversity] = useState('San Jose State University');
+    const [housingType, setHousingType] = useState('All Types');
+    const [minPrice, setMinPrice] = useState('No Min');
+    const [maxPrice, setMaxPrice] = useState('No Max');
+  
+    // Handle search button click
+    const handleSearch = () => {
+      // Build query parameters
+      const params = new URLSearchParams();
+      if (university !== 'San Jose State University') {
+        params.append('university', university);
+      }
+      if (housingType !== 'All Types') {
+        params.append('type', housingType);
+      }
+      if (minPrice !== 'No Min') {
+        params.append('minPrice', minPrice.replace('$', '').replace(',', ''));
+      }
+      if (maxPrice !== 'No Max') {
+        params.append('maxPrice', maxPrice.replace('$', '').replace(',', ''));
+      }
+      
+      // Navigate to listings page with query parameters
+      navigate(`/listings?${params.toString()}`);
+    };
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -45,7 +73,12 @@ const Home: React.FC = () => {
                   <label htmlFor="university" className="block text-sm font-medium text-navy-800">
                     University
                   </label>
-                  <select id="university" className="select mt-1">
+                  <select 
+                    id="university" 
+                    className="select mt-1"
+                    value={university}
+                    onChange={(e) => setUniversity(e.target.value)}
+                  >
                     <option>San Jose State University</option>
                     <option>Santa Clara University</option>
                     <option>Stanford University</option>
@@ -55,7 +88,12 @@ const Home: React.FC = () => {
                   <label htmlFor="housingType" className="block text-sm font-medium text-navy-800">
                     Housing Type
                   </label>
-                  <select id="housingType" className="select mt-1">
+                  <select 
+                    id="housingType" 
+                    className="select mt-1"
+                    value={housingType}
+                    onChange={(e) => setHousingType(e.target.value)}
+                  >
                     <option>All Types</option>
                     <option>Apartments</option>
                     <option>Dorms</option>
@@ -67,7 +105,12 @@ const Home: React.FC = () => {
                     <label htmlFor="minPrice" className="block text-sm font-medium text-navy-800">
                       Min Price
                     </label>
-                    <select id="minPrice" className="select mt-1">
+                    <select 
+                      id="minPrice" 
+                      className="select mt-1"
+                      value={minPrice}
+                      onChange={(e) => setMinPrice(e.target.value)}
+                    >
                       <option>No Min</option>
                       <option>$500</option>
                       <option>$1,000</option>
@@ -78,7 +121,12 @@ const Home: React.FC = () => {
                     <label htmlFor="maxPrice" className="block text-sm font-medium text-navy-800">
                       Max Price
                     </label>
-                    <select id="maxPrice" className="select mt-1">
+                    <select 
+                      id="maxPrice" 
+                      className="select mt-1"
+                      value={maxPrice}
+                      onChange={(e) => setMaxPrice(e.target.value)}
+                    >
                       <option>No Max</option>
                       <option>$1,500</option>
                       <option>$2,000</option>
@@ -86,7 +134,10 @@ const Home: React.FC = () => {
                     </select>
                   </div>
                 </div>
-                <button className="btn-primary w-full">
+                <button 
+                  className="btn-primary w-full"
+                  onClick={handleSearch}
+                >
                   <Search className="mr-2 h-5 w-5" />
                   Search
                 </button>

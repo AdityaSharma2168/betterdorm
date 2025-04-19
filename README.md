@@ -4,6 +4,9 @@ A modern web platform for discovering student housing, posting listings, and roo
 
 ---
 
+# Live Site
+https://wonderful-daifuku-5d221e.netlify.app/
+
 ## Tech Stack
 
 - **Frontend:** React (TypeScript), Vite, TailwindCSS

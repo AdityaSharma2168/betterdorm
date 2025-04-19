@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { Building, Check, X } from 'lucide-react';
+import { Building, Check, X, ArrowLeft } from 'lucide-react';
 
 const Register: React.FC = () => {
   const { user, register, loading, error } = useAuth();
@@ -53,6 +53,13 @@ const Register: React.FC = () => {
   
   return (
     <div className="flex min-h-screen flex-col bg-gray-50">
+      <div className="absolute left-4 top-4">
+        <Link to="/" className="flex items-center text-navy-800 hover:text-primary-600 transition-colors">
+          <ArrowLeft className="h-5 w-5 mr-1" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
+
       <div className="mx-auto flex w-full max-w-md flex-col justify-center px-4 py-12 sm:px-6 md:w-full lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <Link to="/" className="flex items-center justify-center">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LayoutGrid, List, Map, ChevronDown, Filter, Wifi, Coffee, Dumbbell, Snowflake } from 'lucide-react';
+import { LayoutGrid, List, Map, ChevronDown, Filter, Wifi, Coffee, Dumbbell, Snowflake, Plus } from 'lucide-react';
 import ListingCard from '../../components/listings/ListingCard';
 import InteractiveMap from '../../components/home/InteractiveMap';
 
@@ -160,13 +160,19 @@ const Listings: React.FC = () => {
   return (
     <div className="bg-gray-50 py-8">
       <div className="container mx-auto px-4">
-        <div className="mb-8">
+        <div className="mb-8 flex justify-between items-center">
+          <div>
           <h1 className="text-3xl font-bold text-navy-900">Student Housing Listings</h1>
           <p className="mt-2 text-navy-600">
             Find apartments, dorms, and shared housing near SJSU
           </p>
-        </div>
-
+          
+          </div>
+      <Link to="/create-listing" className="btn-primary flex items-center space-x-2">
+        <Plus className="h-4 w-4" />
+        <span>Create Listing</span>
+      </Link>
+    </div>
         <div className="flex flex-col md:flex-row md:space-x-6">
           {/* Filters sidebar */}
           <div className="mb-6 md:mb-0 md:w-1/4">

@@ -106,7 +106,7 @@ const Home: React.FC = () => {
                 View available housing options on our interactive map
               </p>
             </div>
-            <div className="h-[500px] overflow-hidden rounded-lg shadow-lg">
+            <div className="h-[500px] overflow-hidden rounded-lg shadow-lg relative">
               <InteractiveMap />
             </div>
           </div>

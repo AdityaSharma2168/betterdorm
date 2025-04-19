@@ -11,6 +11,7 @@ import RoommateMatching from './pages/roommates/RoommateMatching';
 import Profile from './pages/profile/Profile';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import ForgotPassword from './pages/auth/ForgotPassword';
+import CreateListing from './pages/createlisting/createlisting';
 // Layout
 import MainLayout from './layouts/MainLayout';
 
@@ -24,7 +25,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          {/* Protected routes */}
+          <Route path="/create-listing" element={
+            <ProtectedRoute>
+              <MainLayout><CreateListing /></MainLayout>
+            </ProtectedRoute>
+          } />
           <Route path="/listings" element={
             <ProtectedRoute>
               <MainLayout><Listings /></MainLayout>
@@ -45,6 +50,7 @@ function App() {
               <MainLayout><Profile /></MainLayout>
             </ProtectedRoute>
           } />
+          
         </Routes>
       </Router>
     </AuthProvider>

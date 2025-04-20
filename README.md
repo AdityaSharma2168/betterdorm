@@ -4,8 +4,8 @@ A modern web platform for discovering student housing, posting listings, and roo
 
 ---
 # Demo
+[Watch Demo Video](https://drive.google.com/file/d/1IIMk-0MWOGf2fjMbeUr5U74lz-j-Nf-G/view?usp=sharing)
 
-https://github.com/user-attachments/assets/42e614fe-c1f5-404b-b8b6-97a289b8908f
 
 
 # Live Site

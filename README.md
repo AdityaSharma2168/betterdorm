@@ -120,17 +120,3 @@ betterdorm/
    - API Docs: [http://localhost:4000/api-docs](http://localhost:4000/api-docs) (if enabled)
 
 ---
-
-## Contributing
-
-1. Fork the repo and create a feature branch.
-2. Follow the code style (ESLint/Prettier).
-3. Submit a pull request with a clear description.
-
----
-
-## License
-
-MIT
-
----

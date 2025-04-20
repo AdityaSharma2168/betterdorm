@@ -1,8 +1,12 @@
 # BetterDorm
 
-A modern web platform for discovering student housing, posting listings, and roommate matching for SJSU and beyond.
+A modern web platform for discovering student housing, posting listings, and roommate matching for SJSU and beyond. 
 
 ---
+# Demo
+
+https://github.com/user-attachments/assets/42e614fe-c1f5-404b-b8b6-97a289b8908f
+
 
 # Live Site
 https://wonderful-daifuku-5d221e.netlify.app/

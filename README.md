@@ -115,8 +115,6 @@ betterdorm/
        ```
 
 4. **Access the App**
-   - Frontend: [http://localhost:3000](http://localhost:3000)
-   - Backend API: [http://localhost:4000](http://localhost:4000)
-   - API Docs: [http://localhost:4000/api-docs](http://localhost:4000/api-docs) (if enabled)
+   https://wonderful-daifuku-5d221e.netlify.app/
 
 ---
